@@ -1,0 +1,16 @@
+Testes Automatizados
+
+1 - Testes unitários:
+        Basicamente utiliza ele antes das implementações reais que você deseja fazer
+        Exemplo: Quero criar um serviço, ou um controller, então ao invés de criar ele realmente, você primeiro cria um fake dele, e testa tudo o que tiver lá, se tiver erros dai é só resolve-los sem mexer com dados reais da aplicação. E se tudo tiver certo, agora implementa ele com código real.
+        Obs: Com teste unitário não deve ser feito com acesso a banco de dados ou alguma api externa
+
+2 - Testes de integração:
+        Faz o teste da aplicação por inteiro
+        Exemplo: Uma api de usuários, esse tipo de teste vai estar percorrendo todo o caminho que a aplicação executa, tipo você pede uma requisição e tudo que é executado nesse percurso é testando.
+
+        -> request -> routes -> controller -> repository
+        <- repository <- controller <- response
+
+3 - Ponta a Ponta (E2E)
+        Testa toda ação de um usuário em nossa aplicação, focando mais no front-end
