@@ -7,8 +7,8 @@ const router = Router()
 const userController = new UserController()
 const surveysController = new SurveysController()
 
-router.post("/users", userController.create)
-router.post("/surveys", surveysController.create)
-router.get("/surveys", surveysController.show)
+router.post("/users", userController.create) // Rota de criação de usuário
+router.post("/surveys", surveysController.create) // Rota de criação de enquete
+router.get("/surveys", surveysController.show) // Rota que mosta todas as enquetes
 
 export { router }
