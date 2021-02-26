@@ -46,7 +46,7 @@ export class CreateSurveysUsers1614272876856 implements MigrationInterface {
                         referencedColumnNames: ["id"],
                         columnNames: ["survey_id"],
                         onDelete: "CASCADE",
-                        onUpdate: "CASCADE'"
+                        onUpdate: "CASCADE"
                     }
                 ]
             })
