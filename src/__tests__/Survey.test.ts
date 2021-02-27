@@ -36,4 +36,22 @@ describe("Surveys", () => {
 
         expect(response.body.length).toBe(2)
     })
+
+    it("Should be able to update a survey", async () => {
+        const response = await request(app).get("/surveys")
+
+        let lista = response.body
+        let list = lista.map(e => {
+            return e.id
+        })
+        console.log(list)
+
+        const response1 = await request(app).put("/surveys").send({
+            id: list[0], // receber o id do survey
+            title: "Title example2222",
+            description: "Description example2222"
+        })
+
+        expect(response1.status).toBe(200)
+    })
 })

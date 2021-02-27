@@ -16,8 +16,11 @@ const answerControlller = new AnswerController()
 const npsController = new NpsController()
 
 router.post("/users", userController.create) // Rota de criação de usuário
+router.delete("/users/:id", userController.delete)
+
 router.post("/surveys", surveysController.create) // Rota de criação de enquete
 router.get("/surveys", surveysController.show) // Rota que mosta todas as enquetes
+router.put("/surveys", surveysController.update)
 
 router.post("/sendMail", sendMail.execute)
 

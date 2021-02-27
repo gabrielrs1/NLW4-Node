@@ -12,11 +12,9 @@ class UserController {
             name: yup.string().required(),
             email: yup.string().email().required()
         })
-
         // if(!(await schema.isValid(request.body))) {
         //     return response.status(400).json({error: "Validate Failed"})
         // }
-
         try {
             await schema.validate(request.body, { abortEarly: false })
         } catch (error) {
@@ -47,6 +45,26 @@ class UserController {
 
         // resposta que deu certo
         return response.status(201).json(user)
+    }
+
+    async delete(request: Request, response: Response) {
+        var { id } = request.params
+
+        const usersRepository = getCustomRepository(UsersRepository)
+
+        const user = await usersRepository.findOne({
+            id
+        })
+
+        if(!user) {
+            throw new AppError("User not exists", 400);
+        }
+
+        await usersRepository.delete({
+            id: user.id
+        })
+
+        return response.status(200).json({message: "User Deleted"})
     }
 }
 
