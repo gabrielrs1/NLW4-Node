@@ -9,20 +9,20 @@ export class CreateSurveysUsers1614272876856 implements MigrationInterface {
                 columns: [
                     {
                         name: "id",
-                        type: "uuid",
+                        type: "varchar",
                         isPrimary: true
                     },
                     {
                         name: "user_id",
-                        type: "uuid"
+                        type: "varchar"
                     },
                     {
                         name: "survey_id",
-                        type: "uuid"
+                        type: "varchar"
                     },
                     {
                         name: "value",
-                        type: "number",
+                        type: "int",
                         isNullable: true
                     },
                     {

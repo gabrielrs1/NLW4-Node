@@ -5,8 +5,9 @@ import { SurveysUsersRepository } from "../repository/SurveysUsersRepository";
 
 class AnswerController {
     async execute(request: Request, response: Response) {
-        const { value } = request.params
-        const { u } = request.query
+        // recebe do parametro e na query ( value?u= )
+        const { value } = request.params // nota do nps
+        const { u } = request.query // id da surveys_users
 
         const surveysUsersRepository = getCustomRepository(SurveysUsersRepository)
     

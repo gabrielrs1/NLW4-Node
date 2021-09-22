@@ -44,7 +44,6 @@ describe("Surveys", () => {
         let list = lista.map(e => {
             return e.id
         })
-        console.log(list)
 
         const response1 = await request(app).put("/surveys").send({
             id: list[0], // receber o id do survey
